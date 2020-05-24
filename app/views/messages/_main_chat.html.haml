@@ -1,0 +1,45 @@
+.chat-main
+  .chat-main__group-info
+    .group-top
+      %p.group-top__left
+        test
+      .group-top__right
+        = link_to "#", class:"group-top__right--link" do
+          Edit
+    %ul.group-member
+      Member :
+      %li.group-member__li
+        masa
+  .chat-main__message-list
+    .message-items
+      .message-items__top
+        %p.message-items__top__name
+          masa
+        %p.message-items__top__date
+          2020/5/20(Wed) 11:11:01
+      %p.message-items__message
+        こんにちは！
+    .message-items
+      .message-items__top
+        %p.message-items__top__name
+          masa
+        %p.message-items__top__date
+          2020/5/20(Wed) 11:11:01
+      %p.message-items__message
+        こんにちは！
+    .message-items
+      .message-items__top
+        %p.message-items__top__name
+          masa
+        %p.message-items__top__date
+          2020/5/20(Wed) 11:11:01
+      %p.message-items__message
+        こんにちは！
+  .chat-main__message-form
+    %form.form
+      .inputbox
+        %input{placeholder:"type a message", class: "inputbox__text", type: "text"}
+        %label{class: "inputbox__image"}
+          = icon('fas', 'image')
+          %input{type: "file", class: "inputbox__image__btn"}
+      %input{type: "submit", class: "submit-btn", value: "Send"}
