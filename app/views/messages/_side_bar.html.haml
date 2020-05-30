@@ -4,25 +4,18 @@
       .top-items__name
         = current_user.name
       .top-items__icons
-        = link_to "#" do
+        = link_to new_group_path do
           = icon('far', 'edit', class: 'top-items__icons--edit')
           %span<>
         = link_to edit_user_path(current_user) do
           = icon('fas', 'cog', class: 'top-items__icons--cog')
           %span<>
   .side-bar__group-list
-    .group-items
-      .group-items__name
-        group1
-      .group-items__new-message
-        まだメッセージはありません
-    .group-items
-      .group-items__name
-        group2
-      .group-items__new-message
-        まだメッセージはありません
-    .group-items
-      .group-items__name
-        group3
-      .group-items__new-message
-        まだメッセージはありません
+    - current_user.groups.each do |group|
+      .group-items
+        =link_to '#' do
+          .group-items__name
+            = group.name
+          .group-items__new-message
+            まだメッセージはありません
+      
