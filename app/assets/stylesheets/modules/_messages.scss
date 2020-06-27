@@ -8,6 +8,7 @@
 
 .side-bar {
   width: 300px;
+  // height: 100vh;
   background-color: #253141;
   &__user-name {
     height: 100px;
@@ -42,6 +43,7 @@
   &__group-list {
     background-color: #2f3e51;
     height: calc( 100vh - 100px );
+    overflow: scroll;
     .group-items {
       padding: 20px 20px 40px 20px;
       &__name {
@@ -106,6 +108,7 @@
     height: calc(  100vh - 190px );
     padding-top: 35px;
     padding-left: 40px;
+    overflow: scroll;
     .message-items {
       margin-bottom: 46px;
       &__top {
@@ -131,7 +134,6 @@
   &__message-form {
     background-color: #d2d2d2;
     display: flex; 
-    
     .new_message {
       height: 90px;
       display: flex;
