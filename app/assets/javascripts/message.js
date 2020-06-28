@@ -1,6 +1,5 @@
 $(function(){
   function buildHTML(message){
-    // 「もしメッセージに画像が含まれていたら」という条件式
     if (message.image) {
       var html = `<div class="message-items">
         <div class="message-items__top" data-message-id="${message.id}>
@@ -13,7 +12,7 @@ $(function(){
         </div>
         <p class="message-items__message">
         ${message.content}
-        <img class="messageJ-items__image" src="${message.image}" alt="Amaebi computer">
+        <img class="messageJ-items__image" src="${message.image}">
         </p>
         </div>`
       return html;
@@ -30,7 +29,7 @@ $(function(){
         <p class="message-items__message">
         ${message.content}
         </p>
-        </div>` 
+        </div>`
       return html;
     };
   }
@@ -73,13 +72,15 @@ $(function(){
         $.each(messages, function(i, message) {
           insertHTML += buildHTML(message)
         });
-        $('.messages').append(insertHTML);
-        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+        $('.chat-main__message-list').append(insertHTML);
+        $('.chat-main__message-list').animate({ scrollTop: $('.chat-main__message-list')[0].scrollHeight});
       }
     })
     .fail(function() {
       alert('error');
-    });
-  };
-  setInterval(reloadMessages, 7000);
+    })
+  }
+  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
+    setInterval(reloadMessages, 7000);
+  }
 });
